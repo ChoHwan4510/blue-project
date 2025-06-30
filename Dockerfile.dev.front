@@ -1,0 +1,7 @@
+FROM node:23-alpine
+WORKDIR /app/blue-front
+COPY blue-front/package*.json ./
+RUN npm install
+COPY blue-front/ ./
+EXPOSE 4485
+CMD ["npm", "run", "dev"]

@@ -1,0 +1,8 @@
+FROM node:23-alpine
+WORKDIR /app/blue-back
+COPY blue-back/package*.json ./
+RUN npm install
+COPY blue-back/ ./
+EXPOSE 6974
+# NestJS 개발 서버 실행 (핫 리로드)
+CMD ["npm", "run", "start:dev"]
