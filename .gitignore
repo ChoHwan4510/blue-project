@@ -1,10 +1,24 @@
-# Nestjs specific
-/dist
-/node_modules
-/build
-/tmp
+# === React ===
+/blue-front/node_modules
+/blue-front/dist
+/blue-front/build
+/blue-front/.env
+/blue-front/.env.local
+/blue-front/.env.*.local
+/blue-front/.cache
+/blue-front/.vite
 
-# Logs
+# === NestJS ===
+/blue-back/node_modules
+/blue-back/dist
+/blue-back/build
+/blue-back/tmp
+/blue-back/.env
+/blue-back/.env.development
+/blue-back/.env.test
+/blue-back/.env.production
+
+# === 공통 로그 및 임시파일 ===
 logs
 *.log
 npm-debug.log*
@@ -13,12 +27,14 @@ yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
 
-# dotenv environment variable files
-.env
-.env.development
-.env.test
-.env.production
-
-# temp directory
 .temp
 .tmp
+
+# IDE 설정 파일 (필요에 따라 추가)
+.vscode/
+*.tsbuildinfo
+
+#docker 실서버 배포 파일
+docker-compose.prod.yml
+Dockerfile.prod
+
