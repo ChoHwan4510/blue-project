@@ -12,9 +12,9 @@ AI 모듈을 이용한 블루아카이브 팬아트 모듈앱
 ## 📁 프로젝트 구조
 ```
 project-root/
-├── front-blue/ # React 앱
-├── back-blue/ # NestJS API
-├── ai-module/ # AI 이미지 분류 모듈 (Python 기반)
+├── blue-front/ # React 앱
+├── blue-back/ # NestJS API
+├── blue-ai-module/ # AI 이미지 분류 모듈 (Python 기반)
 │   ├── infer.py # 이미지 추론
 │   ├── model.pt # 모델 가중치 파일 (하단 설명 참조)
 │   ├── labels.txt # 캐릭터 태그 리스트
