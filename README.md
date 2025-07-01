@@ -20,7 +20,7 @@ project-root/
 │   ├── labels.txt # 캐릭터 태그 리스트
 │   ├── train.py # 재학습 스크립트
 │   ├── persona_prompts.json # 캐릭터 별 대화 프롬프트
-│   └── requirements.txt # Python 의존성
+│   └── requirements.txt # Python 라이브러리
 ├── Dockerfile
 ├── docker-compose.yml
 └── README.md
@@ -40,6 +40,17 @@ docker-compose up --build -d
 ```
 - React: http://localhost:6974
 - NestJs API도 같은 포트에서 제공
+
+### 🧠 AI 모듈 실행 준비
+
+AI 이미지 분류 모듈(blue-ai-module)은 PyTorch 및 CLIP 기반으로 작성되어 있으며, 다음 명령어로 필요한 라이브러리를 설치할 수 있습니다.
+
+```bash
+# blue-ai-module 디렉토리로 이동
+cd blue-ai-module
+
+# Python 라이브러리 설치
+pip install -r requirements.txt
 
 
 ## 🔍주 명령어
