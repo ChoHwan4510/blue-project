@@ -51,7 +51,7 @@ cd blue-ai-module
 
 # Python 라이브러리 설치
 pip install -r requirements.txt
-
+```
 
 ## 🔍주 명령어
 
