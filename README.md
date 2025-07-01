@@ -41,7 +41,7 @@ docker-compose up --build -d
 - React: http://localhost:6974
 - NestJs API도 같은 포트에서 제공
 
-### 🧠 AI 모듈 실행 준비
+### 2. AI 모듈 실행 준비
 
 AI 이미지 분류 모듈(blue-ai-module)은 PyTorch 및 CLIP 기반으로 작성되어 있으며, 다음 명령어로 필요한 라이브러리를 설치할 수 있습니다.
 
