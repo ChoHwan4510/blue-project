@@ -1,11 +1,11 @@
-torch
+# 필수 라이브러리
+torch>=1.10
 torchvision
+torchaudio
 ftfy
 regex
 tqdm
 Pillow
-numpy
-scikit-learn
 
-# OpenAI CLIP 직접 설치
+# OpenAI CLIP (GitHub에서 직접 설치)
 git+https://github.com/openai/CLIP.git

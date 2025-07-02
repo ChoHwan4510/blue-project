@@ -16,9 +16,8 @@ project-root/
 ├── blue-back/ # NestJS API
 ├── blue-ai-module/ # AI 이미지 분류 모듈 (Python 기반)
 │   ├── infer.py # 이미지 추론
-│   ├── model.pt # 모델 가중치 파일 (하단 설명 참조)
-│   ├── labels.txt # 캐릭터 태그 리스트
-│   ├── train.py # 재학습 스크립트
+│   ├── labels.txt # 캐릭터 라벨 리스트
+│   ├── tags.txt # 캐릭터 태그 리스트
 │   ├── persona_prompts.json # 캐릭터 별 대화 프롬프트
 │   └── requirements.txt # Python 라이브러리
 ├── Dockerfile
@@ -51,6 +50,13 @@ cd blue-ai-module
 
 # Python 라이브러리 설치
 pip install -r requirements.txt
+
+# torch만 따로 설치(cpu 사용 버전)
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+pip install -r requirements.txt
+
+# 분류기 실행 명령어
+python infer.py --image_dir "분류할 폴더 경로명" --output_dir "분류 후 저장할 경로명"
 ```
 
 ## 🔍주 명령어
@@ -66,11 +72,6 @@ docker-compose up #전체 앱 컨테이너 실행
 ## 📌기타 참고 사항
 - ```.env```파일을 통해 환경변수 설정 가능
 - NestJs는 에서 모든 라우팅은 React ```index.html```로 리다이렉트 (SPA)
-
-## 📦 모델 가중치 파일 안내 (`model.pt`)
-- `model.pt`는 용량이 커서 GitHub에는 포함되지 않습니다.
-- 아래 링크에서 다운로드한 후, `ai-module/model.pt` 위치에 수동으로 넣어주세요.
-- Google Drive 링크: 
 
 ## ✍️ 프로젝트 참여
 - HwanRyang - cagameku3842@naver.com
