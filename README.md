@@ -33,7 +33,7 @@ project-root/
 ### 1. 프로젝트 클론
 
 ```bash
-git clone https://github.com/your-username/project-name.git
+git clone https://github.com/ChoHwan4510/blue-project.git
 cd project-name
 
 #docker로 실행
