@@ -75,9 +75,9 @@ docker-compose up #전체 앱 컨테이너 실행
 - NestJs는 에서 모든 라우팅은 React ```index.html```로 리다이렉트 (SPA)
 
 ## 📦 모델 가중치 파일 안내 (model.pt)
-model.pt는 용량이 커서 GitHub에는 포함되지 않습니다.
-아래 링크에서 다운로드한 후, ai-module/model.pt 위치에 수동으로 넣어주세요.
-Google Drive 링크:
+- model.pt는 용량이 커서 GitHub에는 포함되지 않습니다.
+- 아래 링크에서 다운로드한 후, ai-module/model.pt 위치에 수동으로 넣어주세요.
+- Google Drive 링크:
 
 ## ✍️ 프로젝트 참여
 - HwanRyang - cagameku3842@naver.com
