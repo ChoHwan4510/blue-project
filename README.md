@@ -18,6 +18,8 @@ project-root/
 │   ├── infer.py # 이미지 추론
 │   ├── labels.txt # 캐릭터 라벨 리스트
 │   ├── tags.txt # 캐릭터 태그 리스트
+│   ├── train.py # 모델 학습 코드
+│   ├── model.pt # 모델 가중치 파일 (하단 설명 참조)
 │   ├── persona_prompts.json # 캐릭터 별 대화 프롬프트
 │   └── requirements.txt # Python 라이브러리
 ├── Dockerfile
@@ -71,6 +73,11 @@ docker-compose up #전체 앱 컨테이너 실행
 ## 📌기타 참고 사항
 - ```.env```파일을 통해 환경변수 설정 가능
 - NestJs는 에서 모든 라우팅은 React ```index.html```로 리다이렉트 (SPA)
+
+## 📦 모델 가중치 파일 안내 (model.pt)
+model.pt는 용량이 커서 GitHub에는 포함되지 않습니다.
+아래 링크에서 다운로드한 후, ai-module/model.pt 위치에 수동으로 넣어주세요.
+Google Drive 링크:
 
 ## ✍️ 프로젝트 참여
 - HwanRyang - cagameku3842@naver.com
