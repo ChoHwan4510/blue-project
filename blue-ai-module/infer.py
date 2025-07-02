@@ -10,7 +10,7 @@ import argparse
 # 명령줄 인자 처리
 parser = argparse.ArgumentParser(description="CLIP 기반 이미지 폴더 분류기")
 parser.add_argument("--image_dir", type=str, default="unsorted", help="이미지가 있는 폴더 경로")
-parser.add_argument("--labels", type=str, default="labels.txt", help="CLIP 라벨 파일")
+parser.add_argument("--labels", type=str, default="labels.txt", help="CLIP 라벨(캐릭터명 리스트) 파일")
 parser.add_argument("--tags", type=str, default="tags.txt", help="폴더명 리스트 파일")
 parser.add_argument("--output_dir", type=str, default="sorted", help="분류 결과 저장 폴더")
 parser.add_argument("--output_csv", type=str, default="result.csv", help="결과 CSV 파일 경로")
@@ -97,5 +97,3 @@ with open(CSV_OUTPUT, "w", newline="", encoding="utf-8") as f:
     writer.writerows(results)
 
 print(f"\n✅ 분류 완료: {len(results)}개 이미지 → {CSV_OUTPUT} 저장됨")
-
-#python infer.py --image_dir "분류할 폴더 경로명" --output_dir "분류 후 저장할 경로명"

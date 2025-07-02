@@ -53,9 +53,8 @@ pip install -r requirements.txt
 
 # torch만 따로 설치(cpu 사용 버전)
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
-pip install -r requirements.txt
 
-# 분류기 실행 명령어
+# 분류기 실행 명령어 예시
 python infer.py --image_dir "분류할 폴더 경로명" --output_dir "분류 후 저장할 경로명"
 ```
 
