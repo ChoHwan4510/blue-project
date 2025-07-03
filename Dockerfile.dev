@@ -1,8 +1,26 @@
 FROM node:23-alpine
+
+# 필요한 패키지 설치
+RUN apk add --no-cache netcat-openbsd
+
 WORKDIR /app/blue-back
+
+# package.json 먼저 복사 (캐시 효율성)
 COPY blue-back/package*.json ./
+
+# 의존성 설치
 RUN npm install
+
+# TypeORM CLI 글로벌 설치
+RUN npm install -g typeorm typeorm-ts-node-commonjs
+
+# 소스 코드 복사
 COPY blue-back/ ./
+
+# entrypoint 스크립트 권한 설정
+RUN chmod +x ./entrypoint.sh
+
 EXPOSE 6974
-# NestJS 개발 서버 실행 (핫 리로드)
-CMD ["npm", "run", "start:dev"]
+
+# 자동 마이그레이션을 포함한 entrypoint 실행
+ENTRYPOINT ["./entrypoint.sh"]
