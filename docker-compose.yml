@@ -12,12 +12,21 @@ services:
       - "6974:6974"
     environment:
       - NODE_ENV=development
-    command: npm run start:dev
+      - DB_HOST=mariadb
+      - DB_PORT=3306
+      - DB_PASSWORD=hinadaisuki1004@
+      - DB_USERNAME=hina
+      - DB_NAME=blue_project
+      - AUTO_MIGRATION=true
+    depends_on:
+      mariadb:
+        condition: service_healthy
+    restart: unless-stopped
 
   frontend:
     build:
       context: .
-      dockerfile: Dockerfile.dev.front  # React용 개발 Dockerfile 이름
+      dockerfile: Dockerfile.dev.front
     volumes:
       - ./blue-front:/app/blue-front
       - /app/blue-front/node_modules
@@ -26,3 +35,26 @@ services:
     environment:
       - CHOKIDAR_USEPOLLING=true
     command: npm run dev
+
+  mariadb:
+    image: mariadb:10.11
+    container_name: mariadb_container
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: sex58774485!
+      MYSQL_DATABASE: blue_project
+      MYSQL_USER: hina
+      MYSQL_PASSWORD: hinadaisuki1004@
+    ports:
+      - "3306:3306"
+    volumes:
+      - mariadb_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "hina", "-p$$MYSQL_PASSWORD"]
+      timeout: 20s
+      retries: 10
+      interval: 10s
+      start_period: 40s
+
+volumes:
+  mariadb_data:

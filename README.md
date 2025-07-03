@@ -34,10 +34,13 @@ project-root/
 
 ```bash
 git clone https://github.com/ChoHwan4510/blue-project.git
-cd project-name
+cd blue-project
 
-#docker로 실행
-docker-compose up --build -d
+# 3. Docker Compose 실행 (자동으로 마이그레이션 실행됨)
+docker-compose up -d
+
+# 4. 로그 확인
+docker-compose logs backend
 ```
 - React: http://localhost:6974
 - NestJs API도 같은 포트에서 제공
@@ -68,6 +71,17 @@ npm run dev #React 개발 서버실행
 npm run start:dev #NestJs 개발서버 실행
 
 docker-compose up #전체 앱 컨테이너 실행
+
+
+## 마이그레이션 관련 명령어 ##
+# 마이그레이션 상태 확인
+docker-compose exec backend npm run migration:show
+
+# 마이그레이션 수동 실행
+docker-compose exec backend npm run migration:run
+
+# 마이그레이션 되돌리기
+docker-compose exec backend npm run migration:revert
 ```
 
 ## 📌기타 참고 사항
